@@ -23,21 +23,22 @@
 numbers=parseInt(prompt("Quanti numeri vuoi?"));
 
 firstNumber=parseInt(prompt("Il primo numero divisibile (fizz) ?"));
-seconNumber=parseInt(prompt("Il secondo numero divisibile (fizz) ?"));
-
+seconNumber=parseInt(prompt("Il secondo numero divisibile (buzz) ?"));
 
 const row = document.getElementById("grid");
 console.log("Grid", row);
 
+let append;
+let firstDiv;
+let secondDiv;
 
 for(let i = 1; i<=numbers; i++) {
 
-    let append = "";
-    let firstDiv = (i % firstNumber) === 0;
-    let secondDiv = (i % seconNumber) === 0;
+    firstDiv = (i % firstNumber) === 0;
+    secondDiv = (i % seconNumber) === 0;
     
     // SE NON divisibile per 3 E NON divisibile per 5
-    if((!firstDiv)&&!(secondDiv)) {
+    if((!firstDiv)&&(!secondDiv)) {
 
         append = i;
         row.innerHTML += `<div class="col ms-cell">${append}</div>`;
@@ -59,6 +60,8 @@ for(let i = 1; i<=numbers; i++) {
         row.innerHTML += `<div class="col ms-cell ms-${append}">${append}</div>`;
 
     }
+
+    append = "";
 
     console.log(append);
 
