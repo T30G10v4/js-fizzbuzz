@@ -20,34 +20,43 @@
 //  Se sei a corto di idee per lo stile, potresti prendere spunto dallo screenshot fornito in consegna.
 // Buon lavoro e buon divertimento! :faccia_leggermente_sorridente:
 
+numbers=parseInt(prompt("Quanti numeri vuoi?"));
 
-for(let i = 1; i<=100; i++) {
+firstNumber=parseInt(prompt("Il primo numero divisibile (fizz) ?"));
+seconNumber=parseInt(prompt("Il secondo numero divisibile (fizz) ?"));
+
+
+const row = document.getElementById("grid");
+console.log("Grid", row);
+
+
+for(let i = 1; i<=numbers; i++) {
 
     let append = "";
-
-    let div3 = (i % 3) === 0;
+    let firstDiv = (i % firstNumber) === 0;
+    let secondDiv = (i % seconNumber) === 0;
     
-    let div5 = (i % 5) === 0;
-    
-
-    if((!div3)&&!(div5)) {
+    // SE NON divisibile per 3 E NON divisibile per 5
+    if((!firstDiv)&&!(secondDiv)) {
 
         append = i;
+        row.innerHTML += `<div class="col ms-cell">${append}</div>`;
 
     } else {
 
-        if(div3) {
+        if(firstDiv) {
 
-            append += "Fizz";
-
-        }
-
-        if(div5) {
-
-            append += "Buzz";
+            append += "fizz";
 
         }
 
+        if(secondDiv) {
+
+            append += "buzz";
+
+        }
+
+        row.innerHTML += `<div class="col ms-cell ms-${append}">${append}</div>`;
 
     }
 

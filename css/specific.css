@@ -9,16 +9,31 @@
 }
 
 /*------COMMON PARTS------*/
+.ms-cell {
+
+   min-height: 200px;
+   line-height: 200px;
+   border: 1px solid black;
+
+}
+
+.ms-fizz {
+
+    background-color: aquamarine;
+
+}
+
+.ms-buzz {
+
+    background-color: coral;
+
+}
+
+.ms-fizzbuzz {
+
+    background-color: blueviolet;
+
+}
 
 /*------SPECIFIED PARTS BY ID------*/
-.primo {
 
-    background-color: var(--bg-color-primo);
-
-}
-
-.secondo {
-
-    background-color: var(--bg-color-secondo);
-
-}
